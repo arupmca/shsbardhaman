@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Headmaster, teachers, non-teaching staff and former staff of Sadya High School, Sadya, Purba Bardhaman, West Bengal.">
+  <title>Our Staff | Sadya High School</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="teachers.css">
+  <!-- script.js handles the mobile menu and footer year. teachers.js builds this page. -->
+  <script src="script.js" defer></script>
+  <script src="teachers.js" defer></script>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <p><span aria-hidden="true">⌖</span> VILLAGE - SADYA, POST - SADYA, DIST - PURBA BARDHAMAN, WEST BENGAL</p>
+      <div class="topbar-contact">
+        <a href="mailto:school@example.com">✉ <span>Contact the School</span></a>
+        <a href="index.html#contact">☎ <span>Visit / Contact</span></a>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Sadya High School home">
+        <img src="BlueLogo.png" alt="Sadya High School logo" class="school-logo">
+        <span class="brand-copy">
+          <strong>SADYA HIGH SCHOOL</strong>
+          <small>VILLAGE - SADYA, POST - SADYA, DIST - PURBA BARDHAMAN, WEST BENGAL</small>
+        </span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="index.html#about">About Us</a>
+        <a href="index.html#academics">Academics</a>
+        <a href="index.html#admission">Admission</a>
+        <a class="active" href="teachers.html" aria-current="page">Teachers</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="index.html#notices">Notices</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="staff-intro">
+      <div class="container staff-intro-inner">
+        <div>
+          <h1>Our Staffs</h1>
+          <p>The headmaster, teachers and staffs of Sadya High School, and the colleagues who served here before them. Select a name to read a short profile.</p>
+        </div>
+        <div class="staff-search">
+          <label for="staff-search">Search teachers and staff</label>
+          <input id="staff-search" type="search" placeholder="Name, subject or post" autocomplete="off">
+        </div>
+      </div>
+    </section>
+
+    <nav class="staff-jump" aria-label="Staff sections">
+      <div class="container staff-jump-inner">
+        <a href="#headmaster">Headmaster</a>
+        <a href="#teaching">Teachers <span id="count-teaching"></span></a>
+        <a href="#nonteaching">Non-teaching staff <span id="count-nonteaching"></span></a>
+        <a href="#former">Former staff <span id="count-former"></span></a>
+      </div>
+    </nav>
+
+    <div class="container">
+      <noscript><p class="empty">The staff list needs JavaScript. Please turn it on in your browser.</p></noscript>
+
+      <section class="head-section" id="headmaster" aria-label="Headmaster">
+        <div id="headmaster-slot"></div>
+      </section>
+
+      <section class="staff-section" id="teaching" aria-labelledby="teaching-title">
+        <div class="section-head">
+          <div>
+            <h2 id="teaching-title">Teachers</h2>
+            <p>Assistant Teachers first, then Para Teachers and the ICT Instructor. Each group is listed by date of retirement, earliest first.</p>
+          </div>
+        </div>
+        <ol class="register" id="teaching-list"></ol>
+        <p class="empty" id="teaching-empty" hidden></p>
+      </section>
+
+      <section class="staff-section" id="nonteaching" aria-labelledby="nonteaching-title">
+        <div class="section-head">
+          <div>
+            <h2 id="nonteaching-title">Non-teaching staff</h2>
+            <p>Office and support staff who keep the school running. The Clerk comes first, then the Group D staff by date of joining, earliest first.</p>
+          </div>
+        </div>
+        <ol class="register" id="nonteaching-list"></ol>
+        <p class="empty" id="nonteaching-empty" hidden></p>
+      </section>
+
+      <section class="staff-section" id="former" aria-labelledby="former-title">
+        <div class="section-head">
+          <div>
+            <h2 id="former-title">Former staff</h2>
+            <p>Teachers and staff who have retired or moved to other schools. Most recent first.</p>
+          </div>
+          <div class="filter-chips" role="group" aria-label="Filter former staff">
+            <button class="chip" type="button" data-filter="all" aria-pressed="true">All</button>
+            <button class="chip" type="button" data-filter="retired" aria-pressed="false">Retired</button>
+            <button class="chip" type="button" data-filter="transferred" aria-pressed="false">Transferred</button>
+          </div>
+        </div>
+        <ol class="register" id="former-list"></ol>
+        <p class="empty" id="former-empty" hidden></p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer" id="contact">
+    <div class="container footer-inner">
+      <p>© <span id="year">2026</span> Sadya High School. All Rights Reserved.</p>
+      <p>⌖ Village - Sadya, Post - Sadya, Dist - Purba Bardhaman, West Bengal</p>
+      <a href="mailto:school@example.com">Contact School</a>
+    </div>
+  </footer>
+</body>
+</html>

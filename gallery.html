@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Photo Gallery - Sadya High School, Purba Bardhaman, West Bengal.">
+  <title>Photo Gallery | Sadya High School</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <p><span aria-hidden="true">⌖</span> VILLAGE - SADYA, POST - SADYA, DIST - PURBA BARDHAMAN, WEST BENGAL</p>
+      <div class="topbar-contact">
+        <a href="mailto:school@example.com">✉ <span>Contact the School</span></a>
+        <a href="index.html#contact">☎ <span>Visit / Contact</span></a>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Sadya High School home">
+        <img src="BlueLogo.png" alt="Sadya High School logo" class="school-logo">
+        <span class="brand-copy">
+          <strong>SADYA HIGH SCHOOL</strong>
+          <small>VILLAGE - SADYA, POST - SADYA, DIST - PURBA BARDHAMAN, WEST BENGAL</small>
+        </span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="index.html#about">About Us</a>
+        <a href="index.html#academics">Academics</a>
+        <a href="index.html#admission">Admission</a>
+        <a href="teachers.html">Teachers</a>
+        <a class="active" href="gallery.html" aria-current="page">Gallery</a>
+        <a href="index.html#notices">Notices</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="gallery-container">
+    <div class="gallery-header">
+      <p class="section-kicker">CAMPUS MOMENTS</p>
+      <h1>School Photo Gallery</h1>
+      <p>Explore memorable moments, events, faculty gatherings, and student life at Sadya High School. Click any photo to enlarge it.</p>
+    </div>
+
+    <div class="photo-grid">
+      <div class="photo-card">
+        <img src="images\gallery\462482_1962562401869_1459832830_o.jpg" alt="Faculty and Staff Group Photo">
+        <div class="photo-info">Faculty & Staff Gathering</div>
+      </div>
+      <div class="photo-card">
+        <img src="images\gallery\12363205_10201285367494347_933571570488031203_o.jpg" alt="School Teachers and Members">
+        <div class="photo-info">School Teachers & Staff</div>
+      </div>
+      <div class="photo-card">
+        <img src="images\gallery\28276368_1998372697046585_3383756938627728577_n.jpg" alt="School Event Celebration">
+        <div class="photo-info">Cultural & School Event</div>
+      </div>
+      <div class="photo-card">
+        <img src="images\gallery\IMG_20220317_142804_234.jpg" alt="Staff Meeting Under Canopy">
+        <div class="photo-info">Staff Assembly & Meeting</div>
+      </div>
+      <div class="photo-card">
+        <img src="images\gallery\IMG_20220720_104420_690.jpg" alt="Morning Assembly with Students">
+        <div class="photo-info">Morning Assembly & Students</div>
+      </div>
+      <div class="photo-card">
+        <img src="images\gallery\shs গ্রুপ photo.jpg" alt="Sadya High School Group Photo">
+        <div class="photo-info">School Family Group Photo</div>
+      </div>
+    </div>
+
+    <div class="back-nav">
+      <a class="button button-blue" href="index.html">← Back to Home</a>
+    </div>
+  </main>
+
+  <!-- Lightbox Overlay Modal -->
+  <div class="lightbox-modal" id="lightboxModal">
+    <img class="lightbox-content" id="lightboxImg" alt="Enlarged gallery photo">
+  </div>
+
+  <footer class="footer" id="contact">
+    <div class="container footer-inner">
+      <p>© <span id="year">2026</span> Sadya High School. All Rights Reserved.</p>
+      <p>⌖ Village - Sadya, Post - Sadya, Dist - Purba Bardhaman, West Bengal</p>
+      <a href="mailto:school@example.com">Contact School</a>
+    </div>
+  </footer>
+
+  <!-- Lightbox Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const modal = document.getElementById('lightboxModal');
+      const modalImg = document.getElementById('lightboxImg');
+      const galleryImages = document.querySelectorAll('.photo-card img');
+
+      galleryImages.forEach(img => {
+        img.addEventListener('click', () => {
+          modal.classList.add('active');
+          modalImg.src = img.src;
+          modalImg.alt = img.alt;
+        });
+      });
+
+      // Close modal when clicking outside the image background overlay
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          modal.classList.remove('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
